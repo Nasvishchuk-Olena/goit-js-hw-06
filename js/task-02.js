@@ -10,16 +10,18 @@ const ingredients = [
 
 
 const listOfIngridients = document.querySelector("#ingredients");
-const changedListOfIngridients = ingredients.map((ingridient) => {
 
-  const listOfIngridientsItemEl = document.createElement("li");
-  listOfIngridientsItemEl.classList.add("item")
-  listOfIngridientsItemEl.textContent = ingridient;
+const changedListOfIngridients = (options) => {
+  return options.map((option) => {
 
-  listOfIngridients.appendChild(listOfIngridientsItemEl);
-  return listOfIngridients;
+    const listOfIngridientsItemEl = document.createElement("li");
+    listOfIngridientsItemEl.classList.add("item")
+    listOfIngridientsItemEl.textContent = option;
+
+    listOfIngridients.appendChild(listOfIngridientsItemEl);
+    return listOfIngridients;
   });
- 
+}
 
-console.log(changedListOfIngridients);
+console.log(changedListOfIngridients(ingredients));
 
