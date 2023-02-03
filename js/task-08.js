@@ -3,17 +3,21 @@ const form = document.querySelector(".login-form");
 form.addEventListener('submit', onFormSubmit)
 
 
-
 function onFormSubmit(event) {
   event.preventDefault()
-  const email = event.target.elements.email.value
-  const password = event.target.elements.password.value
-  if (email === '' || password === '') {
+
+const {
+    elements: { email, password }
+  } = event.target;
+
+
+  
+  if (email.value.trim() === '' || password.value === '') {
     alert('Enter your full data')
     return
   }
-  console.log('email:', email)
-  console.log('pasword:', password)
+  console.log({ email, password });
+  
   form.reset()
 }
 
@@ -24,7 +28,8 @@ function onFormSubmit(event) {
 
 
 
-
+// const email = event.target.elements.email.value
+  // const password = event.target.elements.password.value
 
 
 
